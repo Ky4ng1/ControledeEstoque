@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sistema de Busca</title>
+    <link rel="stylesheet" href="../styles/main.css">
+    <link rel="stylesheet" href="../styles/componentsControl.css">
+    <link rel="stylesheet" href="../styles/modal.css">
+    <link rel="stylesheet" href="../styles/addNewClient.css">
+    <link rel="stylesheet" href="../styles/divToPrint.css">
+</head>
+
+<body>
+    <div id="main-div">
+        <div id="divButtonMenu">
+            <a href="./componentsControl.html" class="link">
+                 Componente
+            </a>
+            <a href="./componentsControl.html" class="link active">
+                 Clientes
+            </a>
+            <a href="./partsAndEquipmentControl.html" class="link">
+                Peças e Equipamentos
+            </a>
+            <a href="./statistcs.html" class="link">
+                Consulta de dados
+            </a>
+        </div>
+        <div id="divTitulo">
+            <img src="../img/tbnet_logo.png" alt="TBNet">
+        </div>
+        <h2 id="h3Title"> Clientes</h2>
+        <div id="form-filter">
+            <div>
+                <label for="nameComponent">Pesquisa: </label>
+                <input type="text" name="nameComponent" id="nameComponent" placeholder="cliente, equipamento, ...">
+            </div>
+            <div class="labelPlusInput">
+                <label for="orderBySelect">Ordenar por:</label>
+                <select name="orderBySelect" id="orderBySelect">
+                    <option value="name">Nome</option>
+                    <option value="firstDate">Data de entrada</option>
+                </select>
+            </div>
+            <div class="labelPlusInput">
+                <label for="filterByApproval">Aprovado:</label>
+                <select name="filterByApproval" id="filterByApproval">
+                    <option value=""></option>
+                    <option value="Pendente">Pendente</option>
+                    <option value="Não">Não</option>
+                    <option value="Sim">Sim</option>
+                </select>
+            </div>
+            <button class="buttonGreen" id="toAddNewClient">NOVO CLIENTE</button>
+        </div>
+        <table class="none">
+            <thead>
+                <tr id="first-tr">
+                    <th>ID</th>
+                    <th>Nome</th>
+                    <th>Equipamento - Marca - Modelo</th>
+                    <th>Orçamento</th>
+                    <th>Data de Entrada</th>
+                    <th>Aprovado</th>
+                    <th>Status</th>
+                    <th>Pago</th>
+                    <th>Ações</th>
+                </tr>
+            </thead>
+            <tbody id="tbody"></tbody>
+        </table>
+        <div id="divPagination" class="none"></div>
+    </div>
+    <div class="modal" id="addNewClient">
+        <div class="modalBody" id="modalClient">
+            <div id="divFlexTitleAdd">
+                <img src="../img/bannerBlack.png" alt="ES Eletrônica">
+                <div id="titleCardClient">
+                    <h2 class="pDisplayNoBlock">Ordem de Serviço Nº</h2>
+                    <h2 id="idClient" class="pDisplayNoBlock">6</h2>
+                </div>
+            </div>
+            <div id="formsAddClient">
+                <div class="flex">
+                    <div class="noMargin">
+                        <label for="firstDate">Date de Entrada:</label>
+                        <input type="date" id="firstDate" name="firstDate">
+                    </div>
+                    <div class="noMargin">
+                        <label for="lastDate">Date de Saída:</label>
+                        <input type="date" id="lastDate" name="lastDate">
+                    </div>
+                </div>
+                <div id="grid2">
+                    <div class="divLabelPlusInput">
+                        <label for="nameClient">Nome:</label>
+                        <input type="text" name="nameClient" placeholder="Nome" id="name">
+                    </div>
+                    <div class="divLabelPlusInput">
+                        <label for="foneClient">Telefone:</label>
+                        <input type="text" name="foneClient" placeholder="Telefone" id="fone" maxLength="15">
+                    </div>
+                </div>
+                <div class="grid">
+                    <div class="divLabelPlusInput first">
+                        <label for="foneClient">Cidade:</label>
+                        <input type="cityClient" name="cityClient" placeholder="Cidade" id="city">
+                    </div>
+                    <div class="divLabelPlusInput second">
+                        <label for="districtClient">Bairro:</label>
+                        <input type="text" name="districtClient" placeholder="Bairro" id="district">
+                    </div>
+                    <div class="divLabelPlusInput third">
+                        <label for="localClient">Endereço:</label>
+                        <input type="text" name="localClient" placeholder="Endereço" id="local">
+                    </div>
+                </div>
+                <div class="grid">
+                    <div class="divLabelPlusInput first">
+                        <label for="equipment">Equipamento:</label>
+                        <input type="text" name="equipment" placeholder="Equipamento" id="equipment">
+                    </div>
+                    <div class="divLabelPlusInput second">
+                        <label for="equipmentBrand">Marca:</label>
+                        <input type="text" name="equipmentBrand" placeholder="Marca" id="brand">
+                    </div>
+                    <div class="divLabelPlusInput third">
+                        <label for="equipmentModel">Modelo:</label>
+                        <input type="text" name="equipmentModel" placeholder="Modelo" id="model">
+                    </div>
+                </div>
+                <div class="grid">
+                    <div class="divLabelPlusInput">
+                        <label for="accessories">Acessórios:</label>
+                        <input type="text" name="accessories" placeholder="Acessórios" id="accessories">
+                    </div>
+                    <div class="divLabelPlusInput">
+                        <label for="approval">Orçamento aprovado:</label>
+                        <select name="approval" id="approval">
+                            <option value="Pendente">Pendente</option>
+                            <option value="Não">Não</option>
+                            <option value="Sim">Sim</option>
+                        </select>
+                    </div>
+                    <div class="divLabelPlusInput">
+                        <label for="status">Status Atual:</label>
+                        <input type="text" name="status" placeholder="Status do serviço" id="status">
+                    </div>
+                </div>
+                <div class="flex">
+                    <label for="equipmentDefect">Defeito:</label>
+                    <input type="text" name="equipmentDefect" placeholder="Defeito" id="defect">
+                </div>
+                <div class="grid" id="gridBudget">
+                    <div class="divLabelPlusInput second">
+                        <label for="budgetLabor">Custo da Mão-de-obra:</label>
+                        <input type="number" name="budgetLabor" placeholder="Custo de Mão-de-obra" id="budgetLabor">
+                    </div>
+                    <div class="divLabelPlusInput second">
+                        <label for="budgetComponent">Custo de componentes:</label>
+                        <input type="number" name="budgetComponent" placeholder="Custo de componentes"
+                            id="budgetComponent">
+                    </div>
+                    <div id="totalBudget">
+                        <label><i>Total: R$ </i></label>
+                        <label id="labelTotalBudget"><i>0</i></label>
+                    </div>
+                    <div class="divLabelPlusInput">
+                        <label for="paid">Pago</label>
+                        <select name="paid" id="paid">
+                            <option value="Não">Não</option>
+                            <option value="Sim">Sim</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="div-area">
+                    <textarea placeholder="Avaliação técnica" id="technicalEvaluationt"></textarea>
+                    <textarea placeholder="Itens trocados" id="changedEquipments"></textarea>
+                </div>
+            </div>
+            <div class="divButton">
+                <button class="buttonGreen" id="addButton">ADICIONAR</button>
+                <button class="buttonGreen none" id="editButton">SALVAR ALTERAÇÕES</button>
+                <button class="buttonGreen none" id="pdfButton">GERAR PDF</button>
+                <button id="closeFirstModal" class="buttonRed">FECHAR</button>
+            </div>
+        </div>
+    </div>
+    <div id="element-to-print" class="none">
+        <div id="divFlexTitleAdd">
+            <img src="../img/bannerBlack.png" alt="ES Eletrônica">
+            <div id="titleCardClient">
+                <h2 class="pDisplayNoBlock">Ordem de Serviço Nº</h2>
+                <h2 id="idClient" class="pDisplayNoBlock"></h2>
+            </div>
+        </div>
+        <div id="formsAddClient">
+            <div id="grid2">
+                <div class="divLabelPlusInput second">
+                    <p class="titleValue">Endereço:</p>
+                    <p>Jardim das Laranjeiras - Rua Vitor Hugo José de Souza Nº115 - 13184710</p>
+                </div>
+                <div class="divLabelPlusInput first">
+                    <p class="titleValue">Cidade:</p>
+                    <p id="city" class="values">Hortolândia - SP</p>
+                </div>
+            </div>
+            <div class="divTypesContent">
+                <h3>Dados do cliente</h3>
+                <div class="grid">
+                    <div class="divLabelPlusInput">
+                        <p class="titleValue">Data de Entrada:</p>
+                        <p id="firstDate" class="values"></p>
+                    </div>
+                    <div class="divLabelPlusInput">
+                        <p class="titleValue">Nome:</p>
+                        <p id="name" class="values"></p>
+                    </div>
+                    <div class="divLabelPlusInput">
+                        <p class="titleValue">Telefone:</p>
+                        <p id="fone" class="values"></p>
+                    </div>
+                </div>
+                <div class="grid">
+                    <div class="divLabelPlusInput first">
+                        <p class="titleValue">Cidade:</p>
+                        <p id="city" class="values"></p>
+                    </div>
+                    <div class="divLabelPlusInput second">
+                        <p class="titleValue">Bairro:</p>
+                        <p id="district" class="values"></p>
+                    </div>
+                    <div class="divLabelPlusInput third">
+                        <p class="titleValue">Endereço:</p>
+                        <p id="local" class="values"></p>
+                    </div>
+                </div>
+            </div>
+            <div class="divTypesContent">
+                <h3>Dados do Equipamento</h3>
+                <div class="grid">
+                    <div class="divLabelPlusInput first">
+                        <p class="titleValue">Equipamento:</p>
+                        <p id="equipment" class="values"></p>
+                    </div>
+                    <div class="divLabelPlusInput second">
+                        <p class="titleValue">Marca:</p>
+                        <p id="brand" class="values"></p>
+                    </div>
+                    <div class="divLabelPlusInput third">
+                        <p class="titleValue">Modelo:</p>
+                        <p id="model" class="values"></p>
+                    </div>
+                </div>
+                <div id="grid2">
+                    <div class="divLabelPlusInput">
+                        <p class="titleValue">Defeito:</p>
+                        <p id="defect" class="values"></p>
+                    </div>
+                    <div class="divLabelPlusInput">
+                        <p class="titleValue">Acessórios:</p>
+                        <p id="accessories" class="values"></p>
+                    </div>
+                </div>
+            </div>
+            <div class="divTypesContent">
+                <h3>Avaliação Técnica</h3>
+                <br />
+                <p id="technicalEvaluationt" class="values"></p>
+                <br />
+                <br />
+                <p class="titleValue">Orçamento: </p>
+                <p class="values" id="totalBudget"></p>
+                <br />
+                <br />
+                <p id="warranty" class="titleValue">Garantia de 90 dias após a entrega</p>
+            </div>
+        </div>
+    </div>
+</body>
+<script src="../js/clientsControl.js"></script>
+<script src="../js/pagination.js"></script>
+
+</html>

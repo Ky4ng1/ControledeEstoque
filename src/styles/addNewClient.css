@@ -1,0 +1,136 @@
+.modalBody#modalClient{
+
+    width: 90%;
+    max-width: 1000px;
+    height: 700px;
+}
+
+#divFlexTitleAdd{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 0 50px;
+}
+
+#divFlexTitleAdd img{
+    height: 120px;
+}
+
+.modalBody#modalClient #formsAddClient input{
+    border: 1px solid rgb(61, 61, 61);
+}
+
+.modalBody#modalClient #formsAddClient div.flex{
+
+    margin: 20px 0;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.modalBody#modalClient #formsAddClient div.grid{
+
+    margin: 20px 0;
+
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;   
+    grid-column-gap: 20px;
+}
+
+.modalBody#modalClient #formsAddClient div.divLabelPlusInput{
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+div#formsAddClient div#grid2{
+    
+    margin: 20px 0;
+
+    display: grid;
+    grid-template-columns: 2.06fr 1fr;   
+    grid-column-gap: 20px;
+}
+
+input#defect{
+    width: 93%;
+}
+
+input#name{
+    width: 90%;
+}
+
+div.divLabelPlusInput #district,
+div.divLabelPlusInput #brand,
+div.divLabelPlusInput #city,
+div.divLabelPlusInput #accessories{
+    width: 81%;
+}
+
+div.divLabelPlusInput #local,
+div.divLabelPlusInput #model,
+div.divLabelPlusInput #fone{
+    width: 75%;
+}
+
+div.divLabelPlusInput #budget,
+div.divLabelPlusInput #status{
+    width: 72%;
+}
+
+div.divLabelPlusInput #equipment{
+    width: 68%;
+}
+
+div.divLabelPlusInput #approval{
+    width: 50%;
+}
+
+.modalBody#modalClient #formsAddClient div.noMargin{
+
+    margin: 0;
+}
+
+#titleCardClient{
+
+    text-align: center;
+    margin: 20px 0;
+}
+
+#totalBudget{
+    display: flex;
+    align-items: center;
+    justify-content: end;
+}
+
+.modalBody#modalClient #formsAddClient div.grid#gridBudget{
+    grid-template-columns: 3fr 3fr 1fr 1fr;   
+}
+
+.pDisplayNoBlock{
+    display: inline-block;
+
+    padding: 0;
+    margin: 0;
+}
+
+.modalBody#modalClient .div-area{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.modalBody#modalClient textarea{
+    width: 49%;
+    resize: none;
+    height: 150px;
+
+    padding: 5px;
+    border-radius: 2px;
+
+    background-color: rgb(247, 247, 247);
+    border: 1px solid #444;
+}

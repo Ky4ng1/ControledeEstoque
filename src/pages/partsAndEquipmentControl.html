@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sistema de Busca</title>
+    <link rel="stylesheet" href="../styles/main.css">
+    <link rel="stylesheet" href="../styles/componentsControl.css">
+    <link rel="stylesheet" href="../styles/modal.css">
+    <link rel="stylesheet" href="../styles/addNewComponent.css">
+</head>
+
+<body>
+    <div id="main-div">
+        <div id="divButtonMenu">
+            <a href="./componentsControl.html" class="link">
+                 Componente
+            </a>
+            <a href="./clientsControl.html" class="link">
+                 Clientes
+            </a>
+            <a href="./partsAndEquipmentControl.html" class="link active">
+                Peças e Equipamentos
+            </a>
+            <a href="./statistcs.html" class="link">
+                Consulta de dados
+            </a>
+        </div>
+        <div id="divTitulo">
+            <img src="../img/tbnet_logo.png" alt="TBNet">
+        </div>
+        <h2 id="h3Title">Busca de Peças e Equipamentos</h2>
+        <div id="form-filter">
+            <div id="divSearchInput">
+                <label for="searchInput">Pesquisa: </label>
+                <input type="text" name="searchInput" id="searchInput" placeholder="Tipo / Marca / Modelo">
+            </div>
+            <button class="buttonGreen" id="toAddNewEquipament">NOVA PEÇA/EQUIPAMENTO</button>
+        </div>
+        <table class="none">
+            <thead>
+                <tr id="first-tr">
+                    <th>Tipo</th>
+                    <th>Marca</th>
+                    <th>Modelo</th>
+                    <th>Quantidade</th>
+                    <th>Aplicação</th>
+                    <th>Ações</th>
+                </tr>
+            </thead>
+            <tbody id="tbody"></tbody>
+        </table>
+        <div id="divPagination" class="none"></div>
+    </div>
+    <div class="modal" id="addNewEquipament">
+        <div class="modalBody">
+            <h3 id="titleCardComponent">NOVA PEÇA/EQUIPAMENTO</h3>
+            <div id="formsAddComponent">
+                <input type="text" placeholder="Tipo" id="type">
+                <input type="text" placeholder="Marca" id="brand">
+                <input type="text" placeholder="Modelo" id="model">
+                <input type="number" placeholder="Quantidade" id="qtd">
+                <textarea placeholder="Aplicação" id="application"></textarea>
+            </div>
+            <div class="divButton">
+                <button class="buttonGreen" id="addButton">ADICIONAR</button>
+                <button class="buttonGreen none" id="editButton">SALVAR ALTERAÇÕES</button>
+                <button class="buttonRed" id="closeFirstModal">FECHAR</button>
+            </div>
+        </div>
+    </div>
+</body>
+<script src="../js/partsAndEquipmentControl.js" type="module"></script>
+<script src="../js/pagination.js"></script>
+
+</html>

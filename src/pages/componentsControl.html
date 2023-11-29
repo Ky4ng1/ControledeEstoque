@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sistema de Busca</title>
+    <link rel="stylesheet" href="../styles/main.css">
+    <link rel="stylesheet" href="../styles/componentsControl.css">
+    <link rel="stylesheet" href="../styles/modal.css">
+    <link rel="stylesheet" href="../styles/addNewComponent.css">
+</head>
+
+<body>
+    <div id="main-div">
+        <div id="divButtonMenu">
+            <a href="./componentsControl.html" class="link active">
+                 Componente
+            </a>
+            <a href="./clientsControl.html" class="link">
+                 Clientes
+            </a>
+            <a href="./partsAndEquipmentControl.html" class="link">
+                Peças e Equipamentos
+            </a>
+            <a href="./statistcs.html" class="link">
+                Consulta de dados
+            </a>
+        </div>
+        <div id="divTitulo">
+            <img src="../img/tbnet_logo.png" alt="TBNet">
+        </div>
+        <h2 id="h3Title"> Componentes</h2>
+        <div id="form-filter">
+            <div>
+                <label for="nameComponent">Pesquisa: </label>
+                <input type="text" name="nameComponent" id="nameComponent" placeholder="Pesquise um componente">
+            </div>
+            <div>
+                <label for="nameLocal">Gaveta: </label>
+                <input type="text" name="nameLocal" id="nameLocal" placeholder="Gaveta">
+            </div>
+            <div class="labelPlusInput">
+                <label for="orderBySelect">Ordenar por:</label>
+                <select name="orderBySelect" id="orderBySelect">
+                    <option value="name">Nome</option>
+                    <option value="qtd">Quantidade</option>
+                    <option value="lastUpdate">Última atualização</option>
+                </select>
+            </div>
+            <button class="buttonGreen" id="toAddNewComponent">NOVO COMPONENTE</button>
+        </div>
+        <table class="none">
+            <thead>
+                <tr id="first-tr">
+                    <th>Nome</th>
+                    <th>Quantidade</th>
+                    <th>Local</th>
+                    <th>Descrição</th>
+                    <th>Última atualização do estoque</th>
+                    <th>Ações</th>
+                </tr>
+            </thead>
+            <tbody id="tbody"></tbody>
+        </table>
+        <div id="divPagination" class="none"></div>
+    </div>
+    <div class="modal" id="addNewComponent">
+        <div class="modalBody">
+            <h3 id="titleCardComponent">NOVO COMPONENTE</h3>
+            <div id="formsAddComponent">
+                <input type="text" placeholder="Nome" id="name">
+                <input type="number" placeholder="Quantidade" id="qtd">
+                <input type="text" placeholder="Local de armazenamento" id="local">
+                <textarea placeholder="Descrição" id="description"></textarea>
+            </div>
+            <div class="divButton">
+                <button class="buttonGreen" id="addButton">ADICIONAR</button>
+                <button class="buttonGreen none" id="editButton">SALVAR ALTERAÇÕES</button>
+                <button class="buttonRed" id="closeFirstModal">FECHAR</button>
+            </div>
+        </div>
+    </div>
+</body>
+<script src="../js/componentsControl.js" type="module"></script>
+<script src="../js/pagination.js"></script>
+
+</html>

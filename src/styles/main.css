@@ -1,0 +1,178 @@
+:root {
+    
+    --color-background: #066873;
+    --color-menu: #fff;
+    --color-text-menu: black;
+    --color-primary-text: #e5e5e5;
+    --color-background-tc: #f4f4f4;
+    --color-div-datas: #79787e;
+    --color-shadow: #060606;
+    --color-button-add: #33A685;
+    --color-button-delete: #F23030;
+}
+
+*{
+    box-sizing: border-box;
+}
+
+html, body{
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    font-weight: 400;
+    box-sizing: border-box;
+    font-family: century-gothic, sans-serif;
+}
+
+a{
+    text-decoration: none;
+}
+
+input,
+select{
+    border: none;
+    border-radius: 2px;
+
+    background-color: white;
+    padding: 5px;
+}
+
+select{
+    min-width: 100px;
+    border: 1px solid rgb(61, 61, 61);
+}
+
+/* Referente as tabelas */
+table{
+    width: 95%;
+    max-width: 1400px;
+
+    border-spacing: 0;
+    margin: 20px auto;
+
+    text-align: center;
+}
+
+.none{
+    display: none !important;
+}
+
+td, th{
+    padding: 2px 5px;
+}
+
+th{
+    border-bottom: 1px solid white;
+}
+
+td.buttonTD{
+
+    display: flex;
+    justify-content: space-between;
+}
+
+td + td, th + th{
+    border-left: 1px solid white;
+}
+
+/* Botoes */
+
+button{
+    border: none;
+    border-radius: 2px;
+
+    padding: 5px;
+
+    cursor: pointer;
+    transition: .3s;
+}
+
+button.none{
+    display: none;
+}
+
+.buttonGreen{
+
+    background-color: var(--color-button-add);
+    color: white;
+}
+.buttonGreen:hover{
+
+    background-color: white;
+    color: var(--color-button-add);
+}
+
+.buttonRed{
+
+    background-color: var(--color-button-delete);
+    color: white;
+}
+.buttonRed:hover{
+
+    background-color: white;
+    color: var(--color-button-delete);
+}
+
+#divButtonMenu{
+
+    background: var(--color-menu);
+    width: 100%;
+    margin: 0;
+    padding: 10px 25px 0;
+
+    display: flex;
+}
+
+#divButtonMenu a{
+    
+    display: flex;
+    align-items: center;
+    width: 200px;
+
+    text-decoration: none;
+    padding: 5px 10px;
+
+    color: var(--color-text-menu);
+    transition: .3s;
+
+    border-radius: 10px 10px 0 0;
+
+    border-top: 2px solid var(--color-background);
+    border-left: 2px solid var(--color-background);
+    border-right: 2px solid var(--color-background);
+}
+
+#divButtonMenu a + a{
+    margin-left: 5px;
+}
+
+#divButtonMenu a.active,
+#divButtonMenu a:hover{
+    background-color: var(--color-background);
+    font-weight: 700;
+    color: white;
+}
+
+#divButtonMenu button{
+    font-size: 15px;
+    font-weight: 700;
+    color: white;
+    background: none;
+}
+
+/**/
+
+div#divTitulo{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+div#divTitulo img{
+    width: 400px;
+}
+
+#h3Title{
+    text-align: center;
+    margin: 20px 0 0;
+}
